@@ -38,13 +38,13 @@ const WeatherDisplaySection = ({ apiData }) => {
             <Col className="col-3 d-flex gap-3">
               <div className="text-center">
                 <WiStrongWind />
-                <h4>speed: {apiData.wind.speed}</h4>
+                <h4>speed: {Math.ceil(apiData.wind.speed)}</h4>
               </div>
             </Col>
             <Col className="col-3 d-flex gap-3">
               <div className="text-center">
                 <WiThermometer />
-                <h4>{apiData.main.temp} °C</h4>
+                <h4>{Math.ceil(apiData.main.temp)} °C</h4>
               </div>
             </Col>
           </Row>

@@ -18,7 +18,7 @@ const WeatherBar = ({ handleSearchInputChange }) => {
   };
 
   return (
-    <Navbar id="nav-bar" bg="primary" data-bs-theme="light">
+    <Navbar id="nav-bar" data-bs-theme="light">
       <Container fluid>
         <Navbar.Brand href="#home">
           <img style={{ width: "43px" }} src="Weather.256.png" alt="logo"></img>
