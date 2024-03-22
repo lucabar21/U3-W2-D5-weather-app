@@ -7,7 +7,23 @@
 }
 
 html {
-  background-color: #8bb9ff;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    to left top,
+    #93beff,
+    #9dc4ff,
+    #a7caff,
+    #b0cfff,
+    #bad5ff,
+    #b7d3ff,
+    #b4d1fe,
+    #b1cffe,
+    #a0c4fd,
+    #90bafc,
+    #7eaffa,
+    #6ca5f9
+  );
 }
 
 body {
