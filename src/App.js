@@ -18,8 +18,8 @@ function App() {
   const myApiWeatherFetch = async () => {
     try {
       const apiUrl = searchQuery
-        ? `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=${myApiKey}`
-        : `https://api.openweathermap.org/data/2.5/weather?q=Rome&appid=${myApiKey}`;
+        ? `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=${myApiKey}&units=metric`
+        : `https://api.openweathermap.org/data/2.5/weather?q=Rome&appid=${myApiKey}&units=metric`;
 
       const response = await fetch(apiUrl);
       if (!response.ok) {

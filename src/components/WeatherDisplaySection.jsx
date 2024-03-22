@@ -2,6 +2,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Spinner from "react-bootstrap/Spinner";
+import WeatherIcons from "./WeatherIcons";
+import { WiStrongWind, WiThermometer } from "react-icons/wi";
+import { TiLocationOutline } from "react-icons/ti";
 
 const WeatherDisplaySection = ({ apiData }) => {
   // condizione per evitare che al refresh della pagina l'app si rompa perchè l'array è vuoto o non definito
@@ -13,20 +16,39 @@ const WeatherDisplaySection = ({ apiData }) => {
     );
   }
 
-  const meteo = apiData.weather[0];
   console.log(apiData);
 
   return (
     <Container fluid id="hero-weather">
       {apiData && (
-        <Row className="flex-column" id="weather-card" key={apiData.id}>
-          <Col className="col-5 d-flex gap-3 align-itmes-center">
-            <h2>{apiData.name}</h2>
-          </Col>
-          <Col className="col-5 d-flex gap-3">
-            <h2>{meteo.description}</h2>
-          </Col>
-        </Row>
+        <>
+          <Row id="weather-card">
+            <Col className="col-3 d-flex gap-3">
+              <div className="text-center">
+                <TiLocationOutline />
+                <h4>{apiData.name}</h4>
+              </div>
+            </Col>
+            <Col className="col-3 d-flex gap-3 align-items-center">
+              <div className="text-center d-flex flex-column">
+                <WeatherIcons code={apiData.weather[0].icon} />
+                <h4>{apiData.weather[0].description}</h4>
+              </div>
+            </Col>
+            <Col className="col-3 d-flex gap-3">
+              <div className="text-center">
+                <WiStrongWind />
+                <h4>speed: {apiData.wind.speed}</h4>
+              </div>
+            </Col>
+            <Col className="col-3 d-flex gap-3">
+              <div className="text-center">
+                <WiThermometer />
+                <h4>{apiData.main.temp} °C</h4>
+              </div>
+            </Col>
+          </Row>
+        </>
       )}
     </Container>
   );
